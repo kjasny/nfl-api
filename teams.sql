@@ -50,3 +50,7 @@ INSERT INTO teams (location, mascot, abbreviation, conference, division) VALUES 
 INSERT INTO teams (location, mascot, abbreviation, conference, division) VALUES ('Los Angeles', 'Rams', 'LAR', 'NFC', 'West');
 INSERT INTO teams (location, mascot, abbreviation, conference, division) VALUES ('San Francisco', '49ers', 'SF', 'NFC', 'West');
 INSERT INTO teams (location, mascot, abbreviation, conference, division) VALUES ('Seattle', 'Seahawks', 'SEA', 'NFC', 'West');
+
+CREATE USER 'k_teams_user'@'%' IDENTIFIED WITH mysql_native_password BY 'teams';
+
+GRANT ALL ON nfl.* TO 'k_teams_user'@'%';

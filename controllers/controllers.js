@@ -1,24 +1,24 @@
-const { getAllTeams, getTeamById, addNewTeamModel } = require('./models')
+const { getAllTeams, getTeamById, addNewTeamModel } = require('../models/models')
 
-const getAllTeamsController = (request, response) => {
-    const teamsResult = getAllTeams()
+const getAllTeamsController = async (request, response) => {
+    const teamsResult = await getAllTeams()
     return response.send(teamsResult)
 }
 
-const getTeamByIdController = (request, response) => {
+const getTeamByIdController = async (request, response) => {
     const { id } = request.params
-    const foundTeam = getTeamById(parseInt(id))
+    const foundTeam = await getTeamById(parseInt(id))
     return response.send(foundTeam)
 }
 
-const addNewTeamController = (request, response) => {
+const addNewTeamController = async (request, response) => {
     const { location, mascot, abbreviation, conference, division } = request.body
 
     if(!location || !mascot || !abbreviation || !conference || !division) return response.status(400).send('All fields are required to add a team')
 
     const newTeam = { location, mascot, abbreviation, conference, division }
 
-    const addedTeam = addNewTeamModel(newTeam)
+    const addedTeam = await addNewTeamModel(newTeam)
 
     return response.send(addedTeam)
 }

@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 
-const { getAllTeamsController, getTeamByIdController, addNewTeamController } = require('./controllers')
+const { getAllTeamsController, getTeamByIdController, addNewTeamController } = require('./controllers/controllers')
 
 app.get('/teams', getAllTeamsController)
 

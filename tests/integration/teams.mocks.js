@@ -22,7 +22,6 @@ const teamsMock = [{
   }]
 
   const singleMock = {
-  id: 5,
   location: 'Baltimore',
   mascot: 'Ravens',
   abbreviation: 'BAL',

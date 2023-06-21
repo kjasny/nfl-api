@@ -20,7 +20,7 @@ const addNewTeamController = async (request, response) => {
 
     const addedTeam = await addNewTeamModel(newTeam)
 
-    return response.send(addedTeam)
+    return response.status(201).send(addedTeam)
 }
 
 module.exports = { getAllTeamsController, getTeamByIdController, addNewTeamController }

@@ -29,4 +29,12 @@ const teamsMock = [{
   division: 'North'
   }
 
-  module.exports = { teamsMock, singleMock }
+  const invalidMock = {
+    location: 'Baltimore',
+    mascot: 'Ravens',
+    abbreviation: 'BAL',
+    conference: 'AFC',
+    }
+ 
+ 
+  module.exports = { teamsMock, singleMock, invalidMock }

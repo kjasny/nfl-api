@@ -1,16 +1,26 @@
 const {teamsModel } = require('./index')
 
 const getAllTeams = async () => {
-    const allTeams = await teamsModel.findAll()
+
+    try{
+        const allTeams = await teamsModel.findAll()
     
-    return allTeams
+        return allTeams
+    } catch(error){
+        throw new Error('ERROR!')
+    }
+
 }
 
 const getTeamById = async (id) => {
-    const foundTeam = await teamsModel.findOne({ where: { id }})
+
+    try{
+        const foundTeam = await teamsModel.findOne({ where: { id }})
     
-    return foundTeam
-    
+        return foundTeam
+    } catch(error){
+        throw new Error('Database error')
+    } 
 }
 
 const addNewTeamModel = async (newTeam) => {
